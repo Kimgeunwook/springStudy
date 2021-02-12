@@ -15,12 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class MemberController {
 
     private final MemberManageService memberManageService;
-    //private final JwtTokenProvider jwtTokenProvider; // jwt 쓴다면 이용할 예정
 
-    @GetMapping(value = "/a/hello")
-    public String hello(){
+    @GetMapping(value = "/test")
+    public ResponseEntity<String> test(){
 
-        return "hello world";
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
     @PostMapping(value = "/signin")
