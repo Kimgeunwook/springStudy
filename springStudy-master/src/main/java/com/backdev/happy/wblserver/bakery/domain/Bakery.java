@@ -12,6 +12,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 
+@ToString(of = {"id", "name"})
 @Getter
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // JPA에서는 프록시 객체가 필요함 -> 기본 생성자 하나가 반드시 있어야 함
@@ -56,8 +57,8 @@ public class Bakery {
     private Date  updateTime;
 
     @Builder
-    public Bakery(Long memberId, String name , String img, String address, String introduction){
-        this.member = new Member(memberId);
+    public Bakery(Long BakeryId, String name , String img, String address, String introduction){
+        this.member = new Member(BakeryId);
         this.name = name;
         this.img = img;
         this.address = address;
